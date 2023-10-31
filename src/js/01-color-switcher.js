@@ -10,10 +10,10 @@ refs.startBtn.addEventListener('click', getStartInterval);
 refs.stopBtn.addEventListener('click', getStopInterval);
 
 function getStartInterval() {
-  refs.startBtn.disabled = false;
   if (isActive) return;
-  console.log('start')
+  console.log('start');
   isActive = true;
+  refs.startBtn.disabled = true;
   intervalId = setInterval(() => {
     const randomColor = getRandomHexColor();
     document.body.style.backgroundColor = randomColor;
@@ -21,9 +21,10 @@ function getStartInterval() {
 }
 
 function getStopInterval() {
-  if(!isActive) return
+  if (!isActive) return;
   console.log('stop');
   isActive = false;
+    refs.startBtn.disabled = false;
   clearInterval(intervalId);
 }
 
