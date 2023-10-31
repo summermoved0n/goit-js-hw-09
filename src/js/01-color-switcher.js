@@ -10,6 +10,7 @@ refs.startBtn.addEventListener('click', getStartInterval);
 refs.stopBtn.addEventListener('click', getStopInterval);
 
 function getStartInterval() {
+  refs.startBtn.disabled = false;
   if (isActive) return;
   console.log('start')
   isActive = true;
